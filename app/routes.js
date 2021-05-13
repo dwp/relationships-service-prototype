@@ -237,12 +237,14 @@ router.post('/' + project + '/iteration-4/relationship-type', function (req, res
     req.session.data.relationshipTypeFullLowercase = 'married';
     req.session.data.relationshipTypeAlt = 'When did you get married?';
     req.session.data.relationshipTypeName = 'marriage';
+    req.session.data.relationshipTypePreviousName = 'got married';
   }
   else {
     req.session.data.relationshipTypeFull = 'in the civil partnership';
     req.session.data.relationshipTypeFullLowercase = 'in a civil partnership';
     req.session.data.relationshipTypeAlt = 'When did you form your civil partnership?';
     req.session.data.relationshipTypeName = 'civil partnership';
+    req.session.data.relationshipTypePreviousName = 'formed your civil partnership';
   }
 
 //  if (over18 === 'false') {
