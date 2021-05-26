@@ -20,19 +20,22 @@
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
-                  Are you still {{ data['relationshipTypeFullLowercase'] or '[married/in the civil partnership]' }}?
+                  Are you sure you want to cancel?
                 </h1>
               </legend>
+              <div id="contact-hint" class="govuk-hint">
+                You will lose the information you have provided.
+              </div>
               <div class="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="still-in-a-relationship-1" name="still-in-a-relationship" type="radio" value="yes">
-                  <label class="govuk-label govuk-radios__label" for="still-in-a-relationship-1">
+                  <input class="govuk-radios__input" id="cancel-yes" name="cancel-yes" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="cancel-yes">
                     Yes
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="still-in-a-relationship-2" name="still-in-a-relationship" type="radio" value="no">
-                  <label class="govuk-label govuk-radios__label" for="still-in-a-relationship-2">
+                  <input class="govuk-radios__input" id="cancel-no" name="cancel-no" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="cancel-no">
                     No
                   </label>
                 </div>
@@ -40,8 +43,7 @@
 
             </fieldset>
           </div>
-          <button class="govuk-button govuk-!-margin-bottom-2" data-module="govuk-button">Save and continue</button>
-          <p><a href="cancel">Cancel</a><p>
+          <button class="govuk-button" data-module="govuk-button">Continue</button>
       </form>
 
     </div>
