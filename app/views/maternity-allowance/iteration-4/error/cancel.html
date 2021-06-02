@@ -14,10 +14,23 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li>
+            <a href="#relationship-type-error">Select whether you wish to cancel and lose all information you have provided</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
       <form class="form" method="post">
 
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
+            <div class="govuk-form-group govuk-form-group--error">
+              <fieldset class="govuk-fieldset" aria-describedby="cancel-error">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
                   Are you sure you want to cancel?
@@ -26,6 +39,9 @@
               <div id="contact-hint" class="govuk-hint">
                 You will lose the information you have provided.
               </div>
+              <span id="cancel-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Select whether you wish to cancel and lose all information you have provided
+              </span>
               <div class="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="cancel-yes" name="cancel" type="radio" value="yes">
@@ -43,6 +59,7 @@
 
             </fieldset>
           </div>
+
           <button class="govuk-button" data-module="govuk-button">Continue</button>
       </form>
 
