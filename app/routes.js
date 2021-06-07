@@ -253,7 +253,7 @@ router.post('/' + project + '/iteration-4/relationship-type', function (req, res
 //    res.redirect('/docs/examples/branching/over-18')
 //  }
 
-  res.redirect(301, '/' + project + '/iteration-4/partner-details?guid=' + req.session.data['guid']);
+  res.redirect(301, '/' + project + '/iteration-4/date-of-partnership?guid=' + req.session.data['guid']);
 });
 
 router.post('/' + project + '/iteration-4/partner-details', function (req, res) {
@@ -299,7 +299,7 @@ router.post('/' + project + '/iteration-4/partner-details', function (req, res) 
 
   req.session.data.dateOfBirth = req.session.data['dob-day'] + " " + req.session.data.dobMonthFull + " " + req.session.data['dob-year'];
 
-  res.redirect(301, '/' + project + '/iteration-4/partner-address?guid=' + req.session.data['guid']);
+  res.redirect(301, '/' + project + '/iteration-4/still-in-a-relationship?guid=' + req.session.data['guid']);
 });
 
 router.post('/' + project + '/iteration-4/partner-address', function (req, res) {
@@ -349,7 +349,11 @@ router.post('/' + project + '/iteration-4/date-of-partnership', function (req, r
 
   req.session.data.dateOfPartnership = req.session.data['dop-day'] + " " + req.session.data.dopMonthFull + " " + req.session.data['dop-year'];
 
-  res.redirect(301, '/' + project + '/iteration-4/still-in-a-relationship?guid=' + req.session.data['guid']);
+  res.redirect(301, '/' + project + '/iteration-4/previous-name?guid=' + req.session.data['guid']);
+});
+
+router.post('/' + project + '/iteration-4/previous-name', function (req, res) {
+  res.redirect(301, '/' + project + '/iteration-4/partner-details?guid=' + req.session.data['guid']);
 });
 
 router.post('/' + project + '/iteration-4/still-in-a-relationship', function (req, res) {
@@ -375,6 +379,16 @@ router.post('/' + project + '/iteration-4/civil-partnership-end-date', function 
 
 router.post('/' + project + '/iteration-4/check-your-answers', function (req, res) {
   res.redirect(301, '/' + project + '/iteration-4/confirmation?guid=' + req.session.data['guid']);
+});
+
+router.post('/' + project + '/iteration-4/cancel', function (req, res) {
+  if (relationshipType == 'married' && inRelationship == 'no') {
+    res.redirect(301, '/' + project + '/iteration-4/marriage-end-date?guid=' + req.session.data['guid']);
+  } else if (relationshipType == 'civil-partnership' && inRelationship == 'no') {
+    res.redirect(301, '/' + project + '/iteration-4/civil-partnership-end-date?guid=' + req.session.data['guid']);
+  } else {
+    res.redirect(301, '/' + project + '/iteration-4/confirmation?guid=' + req.session.data['guid']);
+  }
 });
 
 // Iteration 3 - OLD *********************************************************************************************
