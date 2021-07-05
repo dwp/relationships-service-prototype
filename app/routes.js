@@ -299,11 +299,11 @@ router.post('/' + project + '/iteration-4/partner-details', function (req, res) 
 
   req.session.data.dateOfBirth = req.session.data['dob-day'] + " " + req.session.data.dobMonthFull + " " + req.session.data['dob-year'];
 
-  res.redirect(301, '/' + project + '/iteration-4/still-in-a-relationship?guid=' + req.session.data['guid']);
+  res.redirect(301, '/' + project + '/iteration-4/partner-address?guid=' + req.session.data['guid']);
 });
 
 router.post('/' + project + '/iteration-4/partner-address', function (req, res) {
-  res.redirect(301, '/' + project + '/iteration-4/date-of-partnership?guid=' + req.session.data['guid']);
+  res.redirect(301, '/' + project + '/iteration-4/still-in-a-relationship?guid=' + req.session.data['guid']);
 });
 
 router.post('/' + project + '/iteration-4/date-of-partnership', function (req, res) {
@@ -367,6 +367,11 @@ router.post('/' + project + '/iteration-4/still-in-a-relationship', function (re
   } else {
     res.redirect(301, '/' + project + '/iteration-4/confirmation?guid=' + req.session.data['guid']);
   }
+});
+
+
+router.post('/' + project + '/iteration-4/partner-postcode', function (req, res) {
+  res.redirect(301, '/' + project + '/iteration-4/confirmation?guid=' + req.session.data['guid']);
 });
 
 router.post('/' + project + '/iteration-4/marriage-end-date', function (req, res) {
