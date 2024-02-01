@@ -50,22 +50,26 @@
 </header>
 {% endblock %}
 
-{% block footer %}
-<footer class="govuk-footer">
-  <div class="govuk-width-container">
-  <h2 class="govuk-visually-hidden">About this website</h2>
-  <ul class="govuk-footer__inline-list">
-    <li class="govuk-footer__inline-list-item">
-      <a class="govuk-footer__link" href="/appointee/iteration-12/accessibility-statement/accessibility" target="_blank" rel="noopener noreferrer">Accessibility statement (opens in new tab)</a>
-    </li>
-    <li class="govuk-footer__inline-list-item">
-      <a class="govuk-footer__link" href="https://www.gov.uk/government/organisations/department-for-work-pensions/about/personal-information-charter" target="_blank" rel="noopener noreferrer">Privacy (opens in new tab)</a>
-    </li>
-  </ul>
-  </div>
-  </footer>
-{% endblock %}
+{% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
 
+{% if useAutoStoreData %}
+  {% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "https://govuk-prototype-kit.herokuapp.com/",
+            text: "GOV.UK Prototype Kit " + releaseVersion
+          },
+          {
+            href: "/prototype-admin/clear-data",
+            text: "Clear data"
+          }
+        ]
+      }
+    }) }}
+  {% endblock %}
+{% endif %}
 
 {% block bodyEnd %}
   {% block scripts %}

@@ -31,6 +31,7 @@
 {% endblock %}
 
 {% block header %}
+  {% include "includes/cookie-banner.html" %}
   {# Set serviceName in config.js. #}
   {{ govukHeader({
     serviceName: serviceName,
@@ -45,9 +46,9 @@
       },
       {
         href: "/docs/tutorials-and-examples",
-        text: "Tutorials and templates",
+        text: "Tutorials and examples",
         attributes: {
-          "data-tutorials": "Tutorials and templates"
+          "data-tutorials": "Tutorials and examples"
         }
       },
       {
@@ -61,19 +62,28 @@
   }) }}
 {% endblock %}
 
-<footer class="govuk-footer">
-  <div class="govuk-width-container">
-  <h2 class="govuk-visually-hidden">About this website</h2>
-  <ul class="govuk-footer__inline-list">
-    <li class="govuk-footer__inline-list-item">
-      <a class="govuk-footer__link" href="">Accessibility statement</a>
-    </li>
-    <li class="govuk-footer__inline-list-item">
-      <a class="govuk-footer__link" href="">Privacy</a>
-    </li>
-  </ul>
-  </div>
-  </footer>
+{% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
+
+{% block footer %}
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        },
+        {
+          href: "/docs/cookies",
+          text: "Cookies"
+        },
+        {
+          href: "/docs/privacy-policy",
+          text: "Privacy policy"
+        }
+      ]
+    }
+  }) }}
+{% endblock %}
 
 {% block bodyEnd %}
   {% block scripts %}
