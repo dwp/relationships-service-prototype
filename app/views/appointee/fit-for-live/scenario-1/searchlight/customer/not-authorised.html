@@ -1,0 +1,60 @@
+
+{% extends "layout_unbranded.html" %}
+
+{% block page_title %}
+  Searchlight
+{% endblock %}
+
+{% block content %}
+
+  
+<div class="newheader">
+  <p class="name">Ms Jennifer Coles</p>
+  <p class="nino">JK151617B&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;16 JANUARY 1969</p>
+  <a href="#relationships" class="relationships-tab">&nbsp;</a>
+  <a href="/appointee/fit-for-live" class="searchlight-tab">&nbsp;</a>
+  <div class="banner" style="width: 395px;">
+    <p>This person has an appointee. <a href="/appointee/iteration-{{ data['iteration-number'] }}/searchlight/appointee/authorised">View appointee's record</a></p>
+  </div>
+  <div class="search">
+    <input class="govuk-input" id="event-name" name="event-name" type="text">
+    <form class="form" method="post" novalidate>
+      <a href="/appointee/searchlight/" class="search-button" onclick="this.closest('form').submit();return false;">&nbsp;</a>
+    </form>
+  </div>
+</div>
+<div class="newbackground">
+  <div class="result-template">
+    <div class="personal-details">
+      <p class="name">Ms Jennifer Coles</p>
+      <p class="dob">16 JANUARY 1969</p>
+      <p class="nino">JK151617B</p>
+      <p class="gender">Female</p>
+    </div>
+    <div class="address">
+      <p class="correspondence-line-1">7 Acacia Avenue</p>
+      <p class="correspondence-line-2">Gateshead</p>
+      <p class="correspondence-line-3">Tyne and Wear</p>
+      <p class="correspondence-postcode">NE1 2BA</p>
+    </div>
+    <div class="personal-details">
+      <p class="number-mobile">07761 111111</p>
+      </div>
+      <div id="relationships" class="relationships-box">&nbsp;</div>
+
+      <div class="relationship-information">
+        <hr />
+        <p class="date">09 Oct 2023</p>
+        <p class="app"><strong>Mr James Cole</strong>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="/appointee/fit-for-live/scenario-1/searchlight/appointee/authorised">View account</a></p>
+        <p class="type-answer">Relationship type: <strong>Appointee</strong></p>
+        <p class="status"><img src="/public/images/cross.png" style="width: 15px;"> Not authorised</p>
+        <!-- p class="maintenance"><a href="#nogo">View maintenance</a></p>
+        <p class="change"><a href="#nogo">Change</a></p -->
+        <form class="form" method="post" novalidate>
+          <a href="#" class="appointee-link" onclick="this.closest('form').submit();return false;">Add an appointee</a>
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+{% endblock %}
+  
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Cannot find a record for this person</h1>
+    <ul class="govuk-list">
+      <li>
+        <span class="govuk-body govuk-!-font-weight-bold">Name: </span> Arron Riley
+      </li>
+      <li>
+        <span class="govuk-body govuk-!-font-weight-bold">Date of birth: </span> 23 March 1993
+      </li>
+      <li>
+        <span class="govuk-body govuk-!-font-weight-bold">Postcode: </span> UB3 2FX
+      </li>
+    </ul>
+  </div>
+</div>
+<p class="govuk-body">To continue creating an appointee relationship, you will need to complete the Visiting Referral Tool.</p>
+
+{% endblock %}

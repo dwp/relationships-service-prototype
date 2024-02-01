@@ -1,0 +1,59 @@
+
+{% extends "layout_unbranded.html" %}
+
+{% block page_title %}
+  Searchlight
+{% endblock %}
+
+{% block content %}
+
+  <div class="newheader">
+    <p class="name">Mr Alan Smith</p>
+    <p class="nino">25 January 1975&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;JK151621C</p>
+    <a href="#relationships" class="relationships-tab">&nbsp;</a>
+    <a href="/appointee/fit-for-live" class="searchlight-tab">&nbsp;</a>
+    <div class="banner" style="width: 527px;">
+      <p>This person has a proposed appointee. <a href="/appointee/iteration-{{ data['iteration-number'] }}/searchlight/appointee/proposed">View proposed appointee's record</a></p>
+    </div>
+    <div class="search">
+      <input class="govuk-input" id="event-name" name="event-name" type="text">
+      <form class="form" method="post" novalidate>
+        <a href="/appointee/searchlight/" class="search-button" onclick="this.closest('form').submit();return false;">&nbsp;</a>
+      </form>
+    </div>
+  </div>
+  <div class="newbackground">
+    <div class="result-template">
+      <div class="personal-details">
+        <p class="name">Mr Alan Smith</p>
+        <p class="dob">25 January 1975</p>
+        <p class="nino">JK151621C</p>
+        <p class="gender">Male</p>
+      </div>
+      <div class="address">
+        <p class="correspondence-line-1">11 Carvers Mews</p>
+        <p class="correspondence-line-2">Neath Hill</p>
+        <p class="correspondence-line-3">Milton Keynes</p>
+        <p class="correspondence-postcode">MK6 6LN</p>
+      </div>
+      <div class="personal-details">
+        <p class="number-mobile">07878860990</p>
+      </div>
+      <div id="relationships" class="relationships-box">&nbsp;</div>
+      
+      <div class="relationship-information">
+        <hr />
+        <p class="date">27 Sep 2023</p>
+        <p class="app"><strong>Mrs Gloria Smith</strong>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="/appointee/fit-for-live/scenario-2/searchlight/appointee/proposed">View account</a></p>
+        <p class="type-answer">Relationship type: <strong>Appointee</strong></p>
+        <p class="status"><img src="/public/images/exclamation.png" style="width: 15px;"> Proposed</p>
+        <!-- p class="maintenance"><a href="#nogo">View maintenance</a></p>
+        <p class="change"><a href="#nogo">Change</a></p -->
+        <form class="form" method="post" novalidate>
+          <a href="#" class="appointee-link" onclick="this.closest('form').submit();return false;">Change</a>
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

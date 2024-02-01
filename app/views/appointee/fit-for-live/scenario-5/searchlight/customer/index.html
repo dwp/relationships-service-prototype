@@ -1,0 +1,46 @@
+
+{% extends "layout_unbranded.html" %}
+
+{% block page_title %}
+  Searchlight
+{% endblock %}
+
+{% block content %}
+
+  <div class="newheader">
+    <p class="name">Mr Harry Lane</p>
+    <p class="nino">AL866745C&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;22 July 1995</p>
+    <a href="#relationships" class="relationships-tab">&nbsp;</a>
+    <a href="/appointee/fit-for-live" class="searchlight-tab">&nbsp;</a>
+    <div class="search">
+      <input class="govuk-input" id="event-name" name="event-name" type="text">
+      <form class="form" method="post" novalidate>
+        <a href="/appointee/searchlight/" class="search-button" onclick="this.closest('form').submit();return false;">&nbsp;</a>
+      </form>
+    </div>
+  </div>
+  <div class="newbackground">
+    <div class="result">
+      <div class="personal-details">
+        <p class="name">Mr Harry Lane</p>
+        <p class="dob">22 July 1965</p>
+        <p class="nino">AL866745C</p>
+        <p class="gender">Male</p>
+      </div>
+      <div class="address">
+        <p class="correspondence-line-1">21 Buckbeaks Ave</p>
+        <p class="correspondence-line-2">Aylesbury</p>
+        <p class="correspondence-line-3">Buckinghamshire</p>
+        <p class="correspondence-postcode">AL2 2FX   </p>
+      </div>
+      <div class="personal-details">
+        <p class="number-mobile">07529721704 </p>
+      </div>
+      <div id="relationships" class="relationships-box">&nbsp;</div>
+      <form class="form" method="post" novalidate>
+        <a href="#" class="appointee-link" onclick="this.closest('form').submit();return false;">Add an appointee</a>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+
+{% extends "layout_unbranded.html" %}
+
+{% block page_title %}
+  Searchlight
+{% endblock %}
+
+{% block content %}
+
+  <div class="newbackground">
+    <div class="search">
+      <form class="form" method="post" action="/appointee/fit-for-live/" novalidate>
+        <input class="govuk-input" id="event-name" name="event-name" type="text">
+        <a href="result.html" class="search-button" onclick="this.closest('form').submit();return false;">&nbsp;</a>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

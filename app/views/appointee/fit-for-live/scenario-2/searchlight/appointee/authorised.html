@@ -1,0 +1,45 @@
+{% extends "layout_unbranded.html" %}
+
+{% block page_title %}
+  Searchlight
+{% endblock %}
+
+{% block content %}
+
+  <div class="newheader">
+    <p class="name">Mrs Gloria Smith</p>
+    <p class="nino">LM781920A&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;12 April 1975</p>
+    <a href="#relationships" class="relationships-tab">&nbsp;</a>
+    <a href="/appointee/fit-for-live" class="searchlight-tab">&nbsp;</a>
+  </div>
+  <div class="newbackground">
+    <div class="result-template">
+      <div class="personal-details">
+        <p class="name">Mrs Gloria Smith</p>
+        <p class="dob">12 April 1975</p>
+        <p class="nino">LM781920A</p>
+        <p class="gender">Female</p>
+      </div>
+      <div class="address">
+        <p class="correspondence-line-1">17 Carvers Mews</p>
+        <p class="correspondence-line-2">Neath Hill</p>
+        <p class="correspondence-line-3">Milton Keynes</p>
+        <p class="correspondence-postcode">MK6 6LN</p>
+      </div>
+      <div class="personal-details">
+        <p class="number-mobile">02085736091</p>
+      </div>
+      <div id="relationships" class="relationships-box">&nbsp;</div>
+      
+      <div class="relationship-information">
+        <hr />
+        <p class="date">27 Sep 2023</p>
+        <p class="app"><strong>Appointee</strong> for <strong>Ms Alan Smith</strong>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="/appointee/fit-for-live/scenario-2/searchlight/customer/authorised">View account</a></p>
+        <p class="status-inverse"><img src="/public/images/tick.png" style="width: 15px;"> Authorised</p>
+        <!-- p class="maintenance"><a href="#nogo">View maintenance</a></p>
+        <p class="change"><a href="#nogo">Change</a></p -->
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

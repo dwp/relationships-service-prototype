@@ -1,0 +1,45 @@
+{% extends "layout_unbranded.html" %}
+
+{% block page_title %}
+  Searchlight
+{% endblock %}
+
+{% block content %}
+
+  <div class="newheader">
+    <p class="name">Mr James Cole</p>
+    <p class="nino">LM181920C&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;24 March 1993</p>
+    <a href="#relationships" class="relationships-tab">&nbsp;</a>
+    <a href="/appointee/fit-for-live" class="searchlight-tab">&nbsp;</a>
+  </div>
+  <div class="newbackground">
+    <div class="result-template">
+      <div class="personal-details">
+        <p class="name">Mr James Cole</p>
+        <p class="dob">24 March 1993</p>
+        <p class="nino">LM181920</p>
+        <p class="gender">Male</p>
+      </div>
+      <div class="address">
+        <p class="correspondence-line-1">9 Henry Avenue</p>
+        <p class="correspondence-line-2">Gateshead</p>
+        <p class="correspondence-line-3">Tyne and Wear</p>
+        <p class="correspondence-postcode">NE1 1ZX</p>
+      </div>
+      <div class="personal-details">
+        <p class="number-mobile">07791 178231</p>
+      </div>
+      <div id="relationships" class="relationships-box">&nbsp;</div>
+      
+      <div class="relationship-information">
+        <hr />
+        <p class="date">27 Sep 2023</p>
+        <p class="app"><strong>Appointee</strong> for <strong>Ms Jennifer Coles</strong>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="/appointee/fit-for-live/scenario-1/searchlight/customer/proposed">View account</a></p>
+        <p class="status-inverse"><img src="/public/images/exclamation.png" style="width: 20px;"> Proposed</p>
+        <!-- p class="maintenance"><a href="#nogo">View maintenance</a></p>
+        <p class="change"><a href="#nogo">Change</a></p -->
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
