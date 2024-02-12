@@ -1,0 +1,48 @@
+
+{% extends "layout_unbranded.html" %}
+
+{% block page_title %}
+  Searchlight
+{% endblock %}
+
+{% block content %}
+
+  <div class="newheader">
+    <p class="name">Mr Charlie Bucket</p>
+    <p class="nino">AB181920D&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;12 Mar 1994</p>
+    <a href="#relationships" class="relationships-tab">&nbsp;</a>
+  </div>
+  <div class="newbanner">
+  </div>
+  <div class="background11">
+    <div class="one-result">
+      <div class="personal-details">
+        <p class="name">Mr Charlie Bucket</p>
+        <p class="dob">	12 Mar 1994</p>
+        <p class="nino">AB181920D</p>
+        <p class="gender">Male</p>
+      </div>
+      <div class="address">
+        <p class="correspondence-line-1">	23 Bucket House</p>
+        <p class="correspondence-line-2">Wonder Bar Street</p>
+        <p class="correspondence-line-3">Oxford</p>
+        <p class="correspondence-postcode">OX4 0NM</p>
+      </div>
+      <div class="personal-details">
+        <p class="number-mobile">07529721704</p>
+      </div>
+      <div id="relationships" class="relationships-box">&nbsp;</div>
+      
+      <div class="relationship-information">
+        <hr />
+        <hr />
+        <p class="app">Proposed appointee for National Insurance number:&nbsp;<a href="/appointee/iteration-11/searchlight/customer-2/proposed">WY151617B</a></p>
+        <p class="status"><img src="/public/images/exclamation.png" style="width: 15px;"> Proposed</p>
+        <!-- p class="maintenance"><a href="#nogo">View maintenance</a></p>
+        <p class="change"><a href="#nogo">Change</a></p -->
+      </div>
+      <p class="housekeeping"><a href="/appointee/iteration-{{ data['iteration-number'] }}/">Home</a> / <a href="javascript:history.go(-1)">Back</a></p>
+    </div>
+  </div>
+
+{% endblock %}
