@@ -13,6 +13,7 @@ require('./routes/appointee/iteration-8')(router)
 require('./routes/appointee/iteration-9')(router)
 require('./routes/appointee/iteration-10')(router)
 require('./routes/appointee/iteration-11')(router)
+require('./routes/appointee/iteration-12')(router)
 require('./routes/appointee/mvp')(router)
 
 // Maternity Allowance
