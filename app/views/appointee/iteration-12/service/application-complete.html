@@ -1,0 +1,27 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">Details already confirmed</h1>
+
+      <form class="form" method="post" novalidate>
+
+        {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+<p> You cannot access this page as you have already confirmed the details. </p>
+<p class="govuk-body">
+  To continue, <a href="/appointee/iteration-12/searchlight/customer-2/authorised-index" class="govuk-link">go back to Searchlight</a>.
+</p>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
