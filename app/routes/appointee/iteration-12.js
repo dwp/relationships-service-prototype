@@ -59,6 +59,7 @@ module.exports = router => {
     res.redirect('/appointee/iteration-12/searchlight/');
   });
 
+//Journey  Choice 
 
   router.post('/appointee/iteration-12/searchlight/', function (req, res) {
     if (req.session.data['journey-choice'] == 'authorise') {
@@ -69,27 +70,6 @@ module.exports = router => {
     else {res.redirect('/appointee/iteration-12/searchlight/customer/');
     }
   });
-  
-  router.post('/appointee/iteration-12/searchlight/customer/', function (req, res) {
-    res.redirect('/appointee/iteration-12/propose/details');
-  });
-  
-  router.post('/appointee/iteration-12/propose/', function (req, res) {
-    if (req.session.data['appointee-nino-choice'] == 'yes') {
-      res.redirect('/appointee/iteration-12/propose/nino');
-    } else {
-      res.redirect('/appointee/iteration-12/propose/details');
-    }
-  });
-  
-  router.post('/appointee/iteration-12/propose/nino', function (req, res) {
-    res.redirect('/appointee/iteration-12/propose/summary');
-  });
-  
-  router.post('/appointee/iteration-12/searchlight/customer-2/not-authorised', function (req, res) {
-    res.redirect('/appointee/iteration-12/propose/new-details');
-  });
-  
 
   router.post('/appointee/iteration-12/propose/details', function (req, res) {
     if (req.session.data['journey-choice'] == 'propose') {
@@ -105,6 +85,31 @@ module.exports = router => {
       res.redirect('/appointee/iteration-12/service/no-match-found');
     }
   });
+
+//Journey One 
+
+router.post('/appointee/iteration-12/searchlight/customer/', function (req, res) {
+    res.redirect('/appointee/iteration-12/propose/details');
+  });
+  
+      /*router.post('/appointee/iteration-12/propose/', function (req, res) {
+          if (req.session.data['appointee-nino-choice'] == 'yes') {
+            res.redirect('/appointee/iteration-12/propose/nino');
+          } else {
+            res.redirect('/appointee/iteration-12/propose/details');
+          }
+        });*/
+        
+ /* router.post('/appointee/iteration-12/propose/nino', function (req, res) {
+    res.redirect('/appointee/iteration-12/propose/summary');
+  });
+  
+  router.post('/appointee/iteration-12/searchlight/customer-2/not-authorised', function (req, res) {
+    res.redirect('/appointee/iteration-12/propose/new-details');
+  });*/
+  
+
+
   
   //router.post('/appointee/iteration-12/propose/appointee-correct', function (req, res) {
   //  if (req.session.data.appointeeCorrect == 'appointee-correct-yes') {
@@ -129,12 +134,12 @@ module.exports = router => {
     res.redirect('/appointee/iteration-12/searchlight/customer/proposed');
   });
 
+  // ******Jennifer Coles Journey 2 ******* //
+
   router.post('/appointee/iteration-12/searchlight/appointee/proposed', function (req, res) {
     req.session.data['journey-choice'] = 'authorise';
     res.redirect('/appointee/iteration-12/authorise/');
   });
-  
-  // ****** Authorise Relationship ******* //
   
   router.post('/appointee/iteration-12/searchlight/customer/proposed', function (req, res) {
     res.redirect('/appointee/iteration-12/authorise/');
@@ -160,28 +165,14 @@ module.exports = router => {
     res.redirect('/appointee/iteration-12/searchlight/customer-2/proposed');
   });
 
-  router.post('/appointee/iteration-12/authorise/authorised/new-review-date', function (req, res) {
-    res.redirect('/appointee/iteration-12/authorise/authorised/summary');
-  });
+   // ****** Jennifer Coles Authorised******* //
 
-  router.post('/appointee/iteration-12/authorise/authorised/new-summary', function (req, res) {
-    res.redirect('/appointee/iteration-12/searchlight/authorised-confirmation-page');
-  });
-
-  router.post('/appointee/iteration-12/searchlight/customer-2/authorised-index', function (req, res) {
-    res.redirect('/appointee/iteration-12/searchlight/customer-2/authorised');
-  });
-
-  router.post('/appointee/iteration-12/searchlight/customer/new-propose', function (req, res) {
-    res.redirect('/appointee/iteration-12/authorise/new-authorise');
+   router.post('/appointee/iteration-12/authorise/', function (req, res) {
+    res.redirect('/appointee/iteration-12/authorise/decision-date');
   });
 
   router.post('/appointee/iteration-12/authorise/', function (req, res) {
     res.redirect('/appointee/iteration-12/authorise/decision-date');
-  });
- 
-  router.post('/appointee/iteration-12/authorise/new-authorise', function (req, res) {
-    res.redirect('/appointee/iteration-12/authorise/new-decision-date');
   });
 
   router.post('/appointee/iteration-12/authorise/decision-date', function (req, res) {
@@ -198,6 +189,38 @@ module.exports = router => {
     }
   });
 
+  router.post('/appointee/iteration-12/authorise/decision-date-manual', function (req, res) {
+    if (req.session.data['verified-appointeeship'] == 'authorised') {
+      req.session.data.relationshipStatus = 'authorised';
+      res.redirect('/appointee/iteration-12/authorise/authorised/review-date');
+    } else {
+      req.session.data.relationshipStatus = 'not-authorised';
+      res.redirect('/appointee/iteration-12/authorise/not-authorised/summary');
+    }
+  });
+
+
+  // ******William Bucket******* //
+
+  router.post('/appointee/iteration-12/authorise/authorised/new-review-date', function (req, res) {
+    res.redirect('/appointee/iteration-12/authorise/authorised/summary');
+  });
+
+  router.post('/appointee/iteration-12/authorise/authorised/new-summary', function (req, res) {
+    res.redirect('/appointee/iteration-12/searchlight/authorised-confirmation-page');
+  });
+
+  router.post('/appointee/iteration-12/searchlight/customer-2/authorised-index', function (req, res) {
+    res.redirect('/appointee/iteration-12/searchlight/customer-2/authorised');
+  });
+
+
+ 
+  router.post('/appointee/iteration-12/authorise/new-authorise', function (req, res) {
+    res.redirect('/appointee/iteration-12/authorise/new-decision-date');
+  });
+
+
   router.post('/appointee/iteration-12/authorise/new-decision-date', function (req, res) {
     if (req.session.data['decision-date'] == 'today') {
       if (req.session.data['verified-appointeeship'] == 'authorised') {
@@ -213,17 +236,8 @@ module.exports = router => {
   });
   
   
-  router.post('/appointee/iteration-12/authorise/decision-date-manual', function (req, res) {
-    if (req.session.data['verified-appointeeship'] == 'authorised') {
-      req.session.data.relationshipStatus = 'authorised';
-      res.redirect('/appointee/iteration-12/authorise/authorised/review-date');
-    } else {
-      req.session.data.relationshipStatus = 'not-authorised';
-      res.redirect('/appointee/iteration-12/authorise/not-authorised/summary');
-    }
-  });
   
-  // Authorised
+  // Authorised 
   
   router.post('/appointee/iteration-12/authorise/authorised/', function (req, res) {
     if (req.session.data['verified-date'] == 'today') {
