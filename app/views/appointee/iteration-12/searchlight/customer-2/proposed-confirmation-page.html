@@ -1,9 +1,11 @@
+<script src="backbutton.js" type="text/javascript"></script>
 
 {% extends "layout.html" %}
 
 {% block pageTitle %}
   GOV.UK Prototype Kit
 {% endblock %}
+
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-width-container">
@@ -12,19 +14,17 @@
         <div class="govuk-grid-column-two-thirds">
           <div class="govuk-panel govuk-panel--confirmation">
             <h1 class="govuk-panel__title">
-              Decision recorded
+              Proposed appointee added
             </h1>
-            <div class="govuk-panel__body">
-              Appointee status<br><strong>Not authorised</strong>
-            </div>
           </div>
-          <p class="govuk-body">You have not authorised James Coles to be an appointee for Jennifer Coles.</p>
+          <p class="govuk-body">You have added Charlie Bucket as a proposed appointee for William Bucket.</p>
           <p class="govuk-body">
           <p class="govuk-body">
-            <a href="/appointee/iteration-12/searchlight/not-authorised-index" class="govuk-link">Back to Searchlight</a>
+            <a href="/appointee/iteration-12/searchlight/customer-2/proposed-index" class="govuk-link">Back to Searchlight</a>
           </p>
         </div>
       </div>
     </main>
   </div>
+ 
 {% endblock %}

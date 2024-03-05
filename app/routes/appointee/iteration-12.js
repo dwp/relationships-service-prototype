@@ -5,7 +5,7 @@ module.exports = router => {
   
   router.post('/appointee/iteration-12/', function (req, res) {
     // Prototype information
-    req.session.data['iteration-number'] = 11;
+    req.session.data['iteration-number'] = 12;
     // Relationship information
     req.session.data['relationship-decision-day'] = 29;
     req.session.data['relationship-decision-month'] = 'Jan';
@@ -64,12 +64,18 @@ module.exports = router => {
   router.post('/appointee/iteration-12/searchlight/', function (req, res) {
     if (req.session.data['journey-choice'] == 'authorise') {
       res.redirect('/appointee/iteration-12/searchlight/customer/proposed');
-    }     
+    }   
+    if (req.session.data['journey-choice'] == 'scenario-4') {
+      res.redirect('/appointee/iteration-12/service/application-complete');
+    }  
     if (req.session.data['journey-choice'] == 'journeythree') {
-      res.redirect('/appointee/iteration-12/searchlight/customer-2/not-authorised');}
+      res.redirect('/appointee/iteration-12/searchlight/customer-2/not-authorised');
+    }
     else {res.redirect('/appointee/iteration-12/searchlight/customer/');
     }
   });
+
+
 
   router.post('/appointee/iteration-12/propose/details', function (req, res) {
     if (req.session.data['journey-choice'] == 'propose') {
@@ -87,7 +93,6 @@ module.exports = router => {
   });
 
 //Journey One 
-
 router.post('/appointee/iteration-12/searchlight/customer/', function (req, res) {
     res.redirect('/appointee/iteration-12/propose/details');
   });
@@ -123,8 +128,9 @@ router.post('/appointee/iteration-12/searchlight/customer/', function (req, res)
   
   router.post('/appointee/iteration-12/propose/summary', function (req, res) {
     req.session.data.relationshipStatus = 'asserted';
-    res.redirect('/appointee/iteration-12/searchlight/proposed-confirmation-page');
+    res.redirect('/appointee/iteration-12/searchlight/proposed-confirmation-page')
   });
+
   
   router.post('/appointee/iteration-12/searchlight/proposed-confirmation-page', function (req, res) {
     res.redirect('/appointee/iteration-12/searchlight/proposed-index');
@@ -158,7 +164,7 @@ router.post('/appointee/iteration-12/searchlight/customer/', function (req, res)
   });
 
   router.post('/appointee/iteration-12/propose/new-summary', function (req, res) {
-    res.redirect('/appointee/iteration-12/searchlight/customer-2/proposed-index');
+    res.redirect('/appointee/iteration-12/searchlight/customer-2/proposed-confirmation-page');
   });
 
   router.post('/appointee/iteration-12/searchlight/customer-2/proposed-index', function (req, res) {
@@ -203,11 +209,11 @@ router.post('/appointee/iteration-12/searchlight/customer/', function (req, res)
   // ******William Bucket******* //
 
   router.post('/appointee/iteration-12/authorise/authorised/new-review-date', function (req, res) {
-    res.redirect('/appointee/iteration-12/authorise/authorised/summary');
+    res.redirect('/appointee/iteration-12/authorise/authorised/new-summary');
   });
 
   router.post('/appointee/iteration-12/authorise/authorised/new-summary', function (req, res) {
-    res.redirect('/appointee/iteration-12/searchlight/authorised-confirmation-page');
+    res.redirect('/appointee/iteration-12/searchlight/customer-2/authorised-confirmation-page');
   });
 
   router.post('/appointee/iteration-12/searchlight/customer-2/authorised-index', function (req, res) {
@@ -297,11 +303,20 @@ router.post('/appointee/iteration-12/searchlight/customer/', function (req, res)
   });
 
   router.post('/appointee/iteration-12/authorise/not-authorised/newsummary', function (req, res) {
-    res.redirect('/appointee/iteration-12/searchlight/customer-2/not-authorised-2');
+    res.redirect('/appointee/iteration-12/searchlight/customer-2/not-authorised-confirmation-page');
   });
+
+  router.post('/appointee/iteration-12/searchlight/customer-2/not-authorised', function (req, res) {
+    res.redirect('/appointee/iteration-12/propose/new-details');
+  })
+  
 
   router.post('/appointee/iteration-12/searchlight/not-authorised-index', function (req, res) {
     res.redirect('/appointee/iteration-12/searchlight/customer/not-authorised');
+  });
+
+  router.post('/appointee/iteration-12/searchlight/customer-2/not-authorised-index', function (req, res) {
+    res.redirect('/appointee/iteration-12/searchlight/customer-2/not-authorised-2');
   });
   
   // Change
@@ -318,5 +333,3 @@ router.post('/appointee/iteration-12/searchlight/customer/', function (req, res)
   });
   
   }
-  
-
