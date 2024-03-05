@@ -76,7 +76,6 @@ module.exports = router => {
   });
 
 
-
   router.post('/appointee/iteration-12/propose/details', function (req, res) {
     if (req.session.data['journey-choice'] == 'propose') {
       res.redirect('/appointee/iteration-12/propose/summary');
