@@ -66,7 +66,7 @@ module.exports = router => {
       res.redirect('/appointee/iteration-12/searchlight/customer/proposed');
     }   
     if (req.session.data['journey-choice'] == 'scenario-4') {
-      res.redirect('/appointee/iteration-12/service/application-complete');
+      res.redirect('https://www.figma.com/proto/ieL80PQe0tgkI0RRpmDkuQ/Scenario-4?type=design&node-id=10-2&t=RrojM4KqyyTvJF3G-1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=4%3A30&hotspot-hints=0&mode=design');
     }  
     if (req.session.data['journey-choice'] == 'journeythree') {
       res.redirect('/appointee/iteration-12/searchlight/customer-2/not-authorised');
