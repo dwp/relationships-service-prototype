@@ -85,7 +85,7 @@ module.exports = router => {
       res.redirect('/appointee/iteration-12/service/service-down');
     } else if (req.session.data['journey-choice'] == 'authorise') {
       res.redirect('/appointee/iteration-12/propose/summary');
-    } 
+    }
     else {
       res.redirect('/appointee/iteration-12/service/no-match-found');
     }
