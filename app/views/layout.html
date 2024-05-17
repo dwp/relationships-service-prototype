@@ -50,23 +50,27 @@
 </header>
 {% endblock %}
 
-{% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
+{% block footer %}
+<footer class="govuk-footer">
+  <div class="govuk-width-container">
+  <h2 class="govuk-visually-hidden">About this website</h2>
+  <ul class="govuk-footer__inline-list">
+    <li class="govuk-footer__inline-list-item">
+      <a class="govuk-footer__link" href="/appointee/iteration-12/accessibility-statement/accessibility" target="_blank" rel="noopener noreferrer">Accessibility statement</a>
+    </li>
+    <li class="govuk-footer__inline-list-item">
+      <a class="govuk-footer__link" href="https://www.gov.uk/government/organisations/department-for-work-pensions/about/personal-information-charter" target="_blank" rel="noopener noreferrer">Privacy</a>
+    </li>
+  </ul>
+  </div>
+  </footer>
+{% endblock %}
 
 
-  {% block footer %}
-    {{ govukFooter({
-      meta: {
-        items: [
-        {
-          href: "/appointee/iteration-12/accessibility-statement/accessibility", 
-          text: "Accessibility statement "
-        },
-        {
-          href: "https://www.gov.uk/government/organisations/department-for-work-pensions/about/personal-information-charter",
-          text: "Privacy"
-        }
-        ]
-      }
-    }) }}
+{% block bodyEnd %}
+  {% block scripts %}
+    {% include "includes/scripts.html" %}
+    {% block pageScripts %}{% endblock %}
   {% endblock %}
-
+  <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
+{% endblock %}
